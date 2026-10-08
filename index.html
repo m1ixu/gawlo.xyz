@@ -1,14 +1,205 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>golo.xyz</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gawlo · Mini Tools</title>
+<style>
+:root{
+  --bg:#0e0e11;
+  --p:#17171c;
+  --b:#2a2a33;
+  --t:#ececf2;
+  --m:#8e8ea2;
+  --a:#8b7bff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font:14px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+body{
+  background:
+    radial-gradient(circle at 12% 8%,#8b7bff14,transparent 34%),
+    radial-gradient(circle at 88% 92%,#8b7bff0c,transparent 38%),
+    var(--bg);
+  color:var(--t);
+  display:flex;
+  justify-content:center;
+  padding:42px 18px;
+}
+main{width:min(820px,100%)}
+
+header{margin-bottom:24px}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:6px;
+}
+.logo{
+  width:34px;height:34px;
+  display:grid;place-items:center;
+  border:1px solid var(--b);
+  border-radius:9px;
+  background:#17171c;
+  color:var(--a);
+  font-weight:700;
+  font-size:15px;
+  box-shadow:0 8px 25px #0004;
+}
+h1{margin:0;font-size:25px;letter-spacing:-.035em}
+.subtitle{margin:0;color:var(--m);font-size:13px}
+
+.notice{
+  background:#17171c;
+  border:1px solid var(--b);
+  border-radius:12px;
+  padding:15px 17px;
+  margin-bottom:14px;
+}
+.notice-title{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:12px;
+  font-weight:600;
+  margin-bottom:5px;
+}
+.dot{
+  width:7px;height:7px;
+  border-radius:50%;
+  background:var(--a);
+  box-shadow:0 0 12px #8b7bff88;
+}
+.notice p{
+  margin:0;
+  color:var(--m);
+  font-size:12px;
+  max-width:720px;
+}
+
+.section-label{
+  color:var(--m);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  margin:22px 2px 9px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+}
+.card{
+  position:relative;
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  background:var(--p);
+  border:1px solid var(--b);
+  border-radius:12px;
+  padding:18px;
+  min-height:142px;
+  transition:transform .16s ease,border-color .16s ease,box-shadow .16s ease;
+  box-shadow:0 10px 35px #0004;
+}
+.card:hover{
+  transform:translateY(-2px);
+  border-color:#4a465f;
+  box-shadow:0 15px 45px #0007;
+}
+.card:hover .arrow{color:var(--a);transform:translate(1px,-1px)}
+.icon{
+  width:38px;height:38px;
+  display:grid;place-items:center;
+  border:1px solid var(--b);
+  border-radius:9px;
+  background:#22222a;
+  color:var(--a);
+  font-size:18px;
+  margin-bottom:18px;
+}
+.arrow{
+  position:absolute;
+  top:18px;right:18px;
+  color:var(--m);
+  font-size:15px;
+  transition:.16s ease;
+}
+.card h2{font-size:15px;margin:0 0 4px}
+.card p{margin:0;color:var(--m);font-size:12px}
+
+.empty{
+  border:1px dashed #2a2a33;
+  border-radius:12px;
+  padding:18px;
+  margin-top:12px;
+  color:#6f6f80;
+  font-size:11px;
+  text-align:center;
+}
+
+footer{
+  margin-top:22px;
+  padding-top:14px;
+  border-top:1px solid #202027;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:var(--m);
+  font-size:10px;
+}
+@media(max-width:600px){
+  body{padding:28px 14px}
+  .grid{grid-template-columns:1fr}
+  footer{flex-direction:column}
+}
+</style>
 </head>
 <body>
+<main>
+  <header>
+    <div class="brand">
+      <div class="logo">G</div>
+      <h1>Gawlo</h1>
+    </div>
+    <p class="subtitle">Small web experiments, tools &amp; playgrounds.</p>
+  </header>
 
-    <a href="/qr/">QR-Code Generator</a>
-    <br>
-    <a href="/colors/">Colour-Gradient Generator</a>
+  <section class="notice">
+    <div class="notice-title"><span class="dot"></span>Experimental playground</div>
+    <p>
+      Gawlo is a small experimental space for web vibe coding, testing ideas,
+      and making tiny tools. Everything published here is intentionally public
+      and may be reused or shared without requiring credits.
+    </p>
+  </section>
 
+  <div class="section-label">Tools</div>
+
+  <section class="grid">
+    <a class="card" href="/qr/">
+      <div class="icon">⌗</div>
+      <span class="arrow">↗</span>
+      <h2>QR Studio</h2>
+      <p>Create and customize QR codes.</p>
+    </a>
+
+    <a class="card" href="/colors/">
+      <div class="icon">◌</div>
+      <span class="arrow">↗</span>
+      <h2>Abstract Flow</h2>
+      <p>Generate colorful abstract backgrounds.</p>
+    </a>
+  </section>
+
+  <div class="empty">
+    More tiny tools and experiments will appear here.
+  </div>
+
+  <footer>
+    <span>gawlo.xyz</span>
+    <span>public playground · no attribution required</span>
+  </footer>
+</main>
 </body>
 </html>
